@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <style>
+  .gradient-custom-2 {
+  background: #fccb90;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  }
+
+  @media (min-width: 768px) {
+  .gradient-form {
+  height: 100vh !important;
+  }
+}
+  @media (min-width: 769px) {
+  .gradient-custom-2 {
+  border-top-right-radius: .3rem;
+  border-bottom-right-radius: .3rem;
+  }
+}
+  label{
+    font-weight:bolder;
+    font-size:20px;
+  }
+  ul{
+    font-weight:bold;
+    font-size:20px;
+  }
+  p{font-weight:bold;
+  font-size:20px;}
+  input{
+      display: block;
+      height: 50px;
+      width: 100%;
+      border-radius: 3px;
+      border:4px solid black;
+      padding: 0 10px;
+      margin-top: 8px;
+      font-weight:bold;
+      font-size:20px;
+  }
+  form{
+    height:5%;
+  }
+  h2{
+    background: linear-gradient(to right, #f32170,#ff6b08, #cf23cf, #eedd44);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+  }
+    </style>
+  </head>
+
+<body>
+<section  style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-8 mx-md-0">
+                <div class="text-center">
+                  <h2 class="mt-1 mb-5 pb-1">Register Here..</h2>
+                </div>
+
+                <form action="" method="post">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+
+                    <!-- <label for="username">Username</label>
+                    <input type="text" placeholder="Username" name="username" id="username">
+
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Email or Phone" name="email" id="email">
+
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Password" id="password1" name="password1">
+
+                    <button type="submit">Signup</button> -->
+                    <input type="submit" value="Submit" style="border-radius:20px;padding:10px;width:50%;margin-left:80px;background-color:white;font-size:20px;"><br>
+                    <a href="{% url 'login' %}" ><h5>I already have account</h5></a>
+                </form>
+
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-6 p-md-5 mx-md-4">
+                <h4 class="mb-4">Skills speak louder than words</h4>
+                <p class="small mb-0">Every idea has a first line of code. 
+                  Prep for jobs and sharpen your skills alongside a global
+                  community of developers. Access the content you need to 
+                  develop new skills – and land the job you’ve dreamed of.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

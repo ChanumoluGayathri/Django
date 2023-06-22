@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Result|</title>
+<head>
+  <style>
+  html {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #333;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color:#eee;
+    background-attachment: fixed;
+  }
+  .content {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+  }
+  .heading {
+    width: 100%;
+    margin-left: 1rem;
+    font-weight: 900;
+    font-size: 1.618rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1ch;
+    line-height: 1;
+    padding-bottom: 0.5em;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .heading:after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #1a9be6, #1a57e6);
+    bottom: 0;
+  }
+  .description {
+    width: 100%;
+    margin-top: 0;
+    margin-left: 1rem;
+    margin-bottom: 3rem;
+  }
+  .card {
+    color: inherit;
+    cursor: pointer;
+    width: calc(40% - 2rem);
+    min-width: calc(40% - 2rem);
+    height: 400px;
+    min-height: 400px;
+    perspective: 1000px;
+    margin: 1rem;
+    position: relative;
+    margin-left:10px;
+    margin-top: 30px;
+  }
+  @media screen and (max-width: 800px) {
+    .card {
+      width: calc(50% - 2rem);
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .card {
+    width: 100%;
+    }
+  }
+  .front,.back {
+    display: flex;
+    border-radius: 6px;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: ease-in-out 600ms;
+  }
+
+  .front {
+    background-color: #ff6b08;
+    -webkit-frontface-visibility: hidden;
+    backface-visibility: hidden;
+    background-size: cover;
+    padding: 20px;
+    height: 500px;
+    width:500px;
+    border-radius: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    overflow: hidden;
+    font-family: Poppins, sans-serif;
+    color:white;
+  }
+  .front:before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.75;
+    z-index: -1;
+  }
+  .card:hover .front {
+    transform: rotateY(180deg);
+  }
+  .card:nth-child(even):hover .front {
+    transform: rotateY(-180deg);
+  }
+
+  .back {
+    background: #fff;
+    transform: rotateY(-180deg);
+    padding: 30px;
+    height: 500px;
+    background-size: cover;
+    padding: 20px;
+    height: 500px;
+    width: 500px;
+    font-size: 25px;
+    font-weight: 200;
+    color: black;
+    overflow: hidden;
+    font-family: Poppins, sans-serif;
+    border-radius: 20px;
+  }
+  .card:hover .back {
+    transform: rotateY(0deg);
+  }
+  .card:nth-child(even) .back {
+    transform: rotateY(180deg);
+  }
+  .card:nth-child(even):hover .back {
+    transform: rotateY(0deg);
+  }
+  .card-title{
+    font-size: 25px;
+    font-weight: bold;
+  }
+    </style>
+</head>
+<body>
+  {% load static %}
+  {% block content %}
+  <div class="content">
+    <h1 class="heading" class="center">Report Card</h1>
+    <p class="description">Hover over a card to Know You.</p><a class="card">
+      <div class="front">
+        <div>
+        <p class="card-title" style="color:black;font-weight:bolder">Email : {{user.email}}</p>
+        <p class="card-text">*******Score : {{context.score}}******* </p>
+        <p class="card-text">Percentage : {{context.percent}}% </p>
+        <p class="card-text">Total Testcases : 8 </p>
+
+        <p class="card-text">Testcases Passed : {{context.correct}} </p>
+        <p class="card-text">Testcases Failed : {{context.wrong}} </p>
+        <h4>Flip It....!!!!</h4>
+      </div>
+      </div>
+      <div class="back" align="center">
+        <div>
+        <u style="color:#ad188d;">  <p class="card-title" style="color:#ad188d;">Activity Chart</p> </u>
+          {% for i in list1 %}
+                <p class="card-text"><b>Entered At :</b><b style="color:green"> {{i.home}} </b></p>
+          {% endfor %}
+
+          {% for i in list2 %}
+                <p class="card-text"><b>Started Test : </b><b style="color:green">{{i.test}} </b> </p>
+          {% endfor %}
+          {% for i in list3 %}
+                <p class="card-text"><b>Finished the test : </b><b style="color:green">{{i.finish}} </b></p>
+          {% endfor %}
+            <p class="card-text"><b>Duration : </b><b style="color:green">{{context1.tot}} minutes.</b></p>
+
+            <p class="card-text" ><b>Last Tab Switched time : </b></p> <p  id="mytime"  style="color:red">  </p>
+
+                <h4>Thank You...!!!</h4>
+        </div>
+
+      <script>
+      //var time= tot;
+      let time = sessionStorage.getItem("time");
+        console.log(time);
+        document.getElementById("mytime").innerHTML=time;
+      </script>
+
+  {% endblock %}
+</body>
+</html>

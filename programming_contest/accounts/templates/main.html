@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+      * {box-sizing: border-box;}
+  /* Create two equal columns that floats next to each other */
+.main{margin-left: 20px;}
+html {height: 100%;}
+body {
+    min-height: 100%;
+    /*background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);*/
+    background-color: #D8D8D8;
+}
+.column1 {
+  float: left;
+  width: 50%;
+  padding: 5px;
+  height: auto; /* Should be removed. Only for demonstration */
+  border:2px solid black;
+  resize: none;
+  border: flex;
+  max-height:80%;
+}
+.column2 {
+  float: right;
+  width: 50%;
+  padding: 5px;
+  height: auto; /* Should be removed. Only for demonstration */
+  border:2px solid black;
+  resize: none;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.f1{width: 40%;}
+.f2{
+  width: 40%;
+  display: inline-flex;
+  margin-left: 700px;
+  align-items: center;
+  justify-content: right;
+  padding:-200px;
+}
+label{
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 40px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 4px;
+    border : 2px solid black;
+    padding: 0 10px;
+    margin-top: 2px;
+    font-size: 25px;
+    font-weight: 450;
+    align-content: center;
+}
+h1{
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    text-align:center;
+     background-color: lavenderblush;
+     height: 60px;
+     margin:5px;
+}
+.flex-container {display: flex;}
+.flex-child {flex: 1;}
+.flex-child:first-child {margin-right: 20px;}
+.rbt{
+  float:center;
+  margin-top: 20px;
+  display: inline-flex;
+}
+.val1{
+  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  width:70%;
+  border:2px solid black;
+  margin-left: 600px;
+  text-align: center;
+  size:500px;
+  border-radius: 20px;
+}
+.but1{
+  width:190px;
+height: 40px;
+margin-right: 170px;
+margin-left: 100px;
+}
+.but2{
+  width: 190px;
+height: 40px;
+float:right;
+align:center;
+}
+#displaytable {
+  align:center;
+  justify-content: center;
+  display: none;
+  margin-top: 20px;
+  align-items: center;
+}
+td,th {
+  border: 3px solid #000000;
+  padding:10px;
+  font-size: 20px;
+}
+    </style>
+  </head>
+<body>
+    <div class="main">
+    <h1><i>Online Evaluator for Python Program</i></h1>
+    <br>
+   <div class="f1">
+    <form class="val1">
+      <label for="email">Email : {{user.email}}</label>
+
+        <div class="f2">
+        <h2>00:00</h2>
+        </div>
+    </form>
+  </div><br>
+    <div class="row">
+      <div class="column1" >
+        <h2  style="text-align: center;"><u>Problem Statement</u></h2>
+        <br>
+        {% for i in events %}
+        {% if i.key == 'Talent01'%}
+          <h3><b>Even Odd Program in Python</b></h3><br>
+          <h4>While checking Python even or odd numbers, the modulus operator is used. The modulus operator returns the remainder obtained after a division is performed. If the value returned after the application of the modulus operator is zero,
+             then the program will print that the input number is even. Else, it will print the number is odd. Also,
+             if…else statements will be used. </h4>
+             <br><br>
+          <h4>Expected Output: </h4><br>
+          <h5><b>Input:</b>2</h5>
+          <h5><b>Output:</b> 2 is Even</h5><br>
+
+          <h5><b>Input:</b>3</h5>
+          <h5><b>Output:</b>3 is Odd</h5><br>
+
+          <h5><b>Input:</b>7</h5>
+          <h5><b>Output:</b>7 is Odd</h5><br>
+
+          <h5><b>Input:</b>12</h5>
+          <h5><b>Output:</b>12 is Even</h5><br>
+
+          <h5><b>Input:</b>6</h5>
+          <h5><b>Output:</b>6 is Even</h5><br>
+        </p>
+
+      {% elif i.key == 'Talent02' %}
+      <br>
+        <h3><b>Reverse of a Number Program in Python</b></h3><br>
+        <h4>Write a python program to find reverse of a number. </h4>
+           <br><br>
+        <h4>Expected Output: </h4><br>
+        <h5><b>Input : </b> 289</h5>
+        <h5><b>Output : </b>The reverse number is: 982</h5><br>
+
+        <h5><b>Input : </b> 123456</h5>
+        <h5><b>Output  :</b>The reverse number is: 654321</h5><br>
+
+        <h5><b>Input : </b> 24</h5>
+        <h5><b>Output : </b>The reverse number is: 42</h5><br>
+
+        <h5><b>Input : </b> 12</h5>
+        <h5><b>Output : </b>The reverse number is: 21</h5><br>
+
+        <h5><b>Input : </b> 101</h5>
+        <h5><b>Output : </b>The reverse number is: 101</h5><br>
+      </p>
+      {% elif i.key == 'Talent03' %}
+      <br>
+        <h3><b>Checking Prime number or not in Python</b></h3><br>
+
+        <h4>Write a python program to find whether given number is Prime number or not. </h4>
+           <br><br>
+        <h4>Expected Output: </h4><br>
+        <h5><b>Input : </b> 3</h5>
+        <h5><b>Output : </b> 3 is a Prime Number</h5><br>
+
+        <h5><b>Input : </b> 2</h5>
+        <h5><b>Output  :</b> 2 is not a Prime Number</h5>
+
+        <h5><b>Input : </b> 9</h5>
+        <h5><b>Output : </b> 9 is not a Prime Number</h5><br>
+
+        <h5><b>Input : </b> 11</h5>
+        <h5><b>Output : </b> 11 is a Prime Number</h5><br>
+
+        <h5><b>Input : </b> 121</h5>
+        <h5><b>Output : </b> 121 is not a Prime Number</h5><br>
+      </p>
+      {% elif i.key == 'Talent04' %}
+      <br>
+        <h3><b>Positive Or Not</b></h3><br>
+
+        <h4>Given an integer N,verifying the given number is a positive or not.Display 1 if N is positive number else 0.</h4>
+           <br><br>
+        <h4>Expected Output: </h4><br>
+        <h5><b>Input : </b> 8</h5>
+        <h5><b>Output : </b> 1</h5><br>
+
+     <h4>Expected Output: </h4><br>
+     <h5><b>Input : </b> -7</h5>
+     <h5><b>Output : </b> 0</h5><br>
+     <h4>Expected Output: </h4><br>
+     <h5><b>Input : </b> 5</h5>
+     <h5><b>Output : </b> 1</h5><br>
+
+     <h4>Expected Output: </h4><br>
+    <h5><b>Input : </b> -77</h5>
+    <h5><b>Output : </b> 0</h5><br>
+
+    <h4>Expected Output: </h4><br>
+    <h5><b>Input : </b> 65</h5>
+    <h5><b>Output : </b> 1</h5><br>
+      </p>
+
+      {% elif i.key == 'Talent05' %}
+      <br>
+        <h3><b>Magic Number</b></h3><br>
+
+        <h4>Given an integer N, find whether the numbers is a magic number or not. Display 1 if N is magic number else 0.</h4>
+           <br><br>
+        <h4>Expected Output: </h4><br>
+        <h5><b>Input : </b> 199</h5>
+        <h5><b>Output : </b> 1</h5><br>
+        <br><br>
+     <h4>Expected Output: </h4><br>
+     <h5><b>Input : </b> 23</h5>
+     <h5><b>Output : </b> 0</h5><br>
+     <br><br>
+     <h4>Expected Output: </h4><br>
+     <h5><b>Input : </b> 325</h5>
+     <h5><b>Output : </b> 1</h5><br>
+     <br><br>
+     <h4>Expected Output: </h4><br>
+    <h5><b>Input : </b> 110</h5>
+    <h5><b>Output : </b> 0</h5><br>
+    <br><br>
+    <h4>Expected Output: </h4><br>
+    <h5><b>Input : </b> 226</h5>
+    <h5><b>Output : </b> 1</h5><br>
+      </p>
+
+      {% elif i.key == 'Talent06' %}
+      <br>
+        <h3><b>Captilizing Vowel</b></h3><br>
+
+        <h4>.Write a program that takes a string of english characters from the user, and outputs the same string but with capitalized vowels.</h4>
+           <br><br>
+        <h4>Expected Output: </h4><br>
+        <h5><b>Input : </b> erosenninJirayaSama</h5>
+        <h5><b>Output : </b> ErOsEnnInJIrAyASAmA </h5><br>
+        <br><br>
+     <h4>Expected Output: </h4><br>
+     <h5><b>Input : </b> dialecticalmaterialism </h5>
+     <h5><b>Output : </b> dIAlEctIcAlmAtErIAlIsm</h5><br>
+     <br><br>
+     <h4>Expected Output: </h4><br>
+     <h5><b>Input : </b> religionisthesighoftheopressedcreature</h5>
+     <h5><b>Output : </b> rElIgIOnIsthEsIghOfthEOprEssEdcrEAtUrE</h5><br>
+     <br><br>
+     <h4>Expected Output: </h4><br>
+    <h5><b>Input : </b> information</h5>
+    <h5><b>Output : </b> InfOrmAtIOn</h5><br>
+    <br><br>
+    <h4>Expected Output: </h4><br>
+    <h5><b>Input : </b>technology </h5>
+    <h5><b>Output : </b> tEchnOlOgy</h5><br>
+      </p>
+
+      {% elif i.key == 'Talent07' %}
+      <br>
+        <h3><b>Unitdigit Number</b></h3><br>
+
+        <h4>Given an integers N1 then print the unit digit number of that number.</h4>
+           <br><br>
+        <h4>Expected Output: </h4><br>
+        <h5><b>Input : </b> 543</h5>
+        <h5><b>Output : </b> 3</h5><br>
+        <br><br>
+     <h4>Expected Output: </h4><br>
+     <h5><b>Input : </b> 231</h5>
+     <h5><b>Output : </b> 1</h5><br>
+     <br><br>
+     <h4>Expected Output: </h4><br>
+     <h5><b>Input : </b> 325</h5>
+     <h5><b>Output : </b> 5</h5><br>
+     <br><br>
+     <h4>Expected Output: </h4><br>
+    <h5><b>Input : </b> 110</h5>
+    <h5><b>Output : </b> 0</h5><br>
+    <br><br>
+    <h4>Expected Output: </h4><br>
+    <h5><b>Input : </b> 26</h5>
+    <h5><b>Output : </b> 6</h5><br>
+      </p>
+
+      {% elif i.key == 'Talent08' %}
+      <br>
+        <h3><b>Tensdigit Number</b></h3><br>
+
+        <h4>Given an integers N1 then print the tens digit number of that number</h4>
+           <br><br>
+        <h4>Expected Output: </h4><br>
+        <h5><b>Input : </b> 543</h5>
+        <h5><b>Output : </b> 4</h5><br>
+        <br><br>
+     <h4>Expected Output: </h4><br>
+     <h5><b>Input : </b> 231</h5>
+     <h5><b>Output : </b> 3</h5><br>
+     <br><br>
+     <h4>Expected Output: </h4><br>
+     <h5><b>Input : </b> 325</h5>
+     <h5><b>Output : </b> 2</h5><br>
+     <br><br>
+     <h4>Expected Output: </h4><br>
+    <h5><b>Input : </b> 110</h5>
+    <h5><b>Output : </b> 1</h5><br>
+    <br><br>
+    <h4>Expected Output: </h4><br>
+    <h5><b>Input : </b> 26</h5>
+    <h5><b>Output : </b> 2</h5><br>
+      </p>
+
+      {% elif i.key == 'Talent09' %}
+      <br>
+        <h3><b>Palindrome Or Not</b></h3><br>
+
+        <h4>Given a string, write a python function to check if it is palindrome or not. A string is said to be a palindrome if the reverse of the string is the same as the string. For example, “radar” is a palindrome, but “radix” is not a palindrome.</h4>
+           <br><br>
+        <h4>Expected Output: </h4><br>
+        <h5><b>Input : </b> malayalam</h5>
+        <h5><b>Output : </b> Yes</h5><br>
+        <br><br>
+     <h4>Expected Output: </h4><br>
+     <h5><b>Input : </b> madam</h5>
+     <h5><b>Output : </b> Yes</h5><br>
+     <br><br>
+     <h4>Expected Output: </h4><br>
+     <h5><b>Input : </b> teacher</h5>
+     <h5><b>Output : </b> No </h5><br>
+     <br><br>
+     <h4>Expected Output: </h4><br>
+    <h5><b>Input : </b> gagan</h5>
+    <h5><b>Output : </b> No</h5><br>
+    <br><br>
+    <h4>Expected Output: </h4><br>
+    <h5><b>Input : </b> radar</h5>
+    <h5><b>Output : </b> Yes</h5><br>
+      </p>
+
+      {% elif i.key == 'Talent10' %}
+      <br>
+        <h3><b>  Armstrong number  </b></h3><br>
+
+        <h4>Check whether an n-digit integer is an Armstrong number or not.</h4>
+           <br><br>
+        <h4>Expected Output: </h4><br>
+        <h5><b>Input : </b> 407 </h5>
+        <h5><b>Output : </b>407 is an Armstrong number</h5><br>
+        <br><br>
+     <h4>Expected Output: </h4><br>
+     <h5><b>Input : </b> 663 </h5>
+     <h5><b>Output : </b> 663 is not an Armstrong number</h5><br>
+     <br><br>
+     <h4>Expected Output: </h4><br>
+     <h5><b>Input : </b> 1634 </h5>
+     <h5><b>Output : </b>1634 is an Armstrong number</h5><br>
+     <br><br>
+     <h4>Expected Output: </h4><br>
+    <h5><b>Input : </b> 153</h5>
+    <h5><b>Output : </b> 153 is an Armstrong number</h5><br>
+    <br><br>
+    <h4>Expected Output: </h4><br>
+    <h5><b>Input : </b> 53</h5>
+    <h5><b>Output : </b>53 is not an Armstrong number</h5><br>
+      </p>
+
+      {% else %}
+
+      {% endif %}
+
+
+    </div>
+      {% endfor %}
+      <div class="column2">
+        <div class="container-fluid">
+          <div class="row">
+            <div>
+              <form action="/main/run" method="POST">
+                {% csrf_token %}
+                <div class="form-group row">
+                  <div>
+                    <label for="code"><h4>Coding Area</h4></label>
+                    <textarea class="form-control" rows="10" name="code_area" style="border:1px solid grey; letter-spacing: 1px; font-family: 'Lucida Console'; font-size: 20px; " onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{code}}</textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-container">
+                <div class="flex-child magenta">
+                  <label for="input"><h4>Input</h4></label>
+                    <textarea class="form-control" rows="5" name="input_area" style="border:1px solid grey; font-size: 20px; font-weight: 5px;">{{input}}</textarea>
+                    </div>
+                    <div class="flex-child green">
+                      <label for="output"><h4>Output</h4></label>
+                      <textarea class="form-control"  rows="5" name="output_area" style="border:1px solid grey; font-size: 20px; font-weight: 5px;" disabled>{{output}}</textarea>
+                    </div>
+                  </div>
+<br><br>
+                <div class="rbt">
+                  <div class="but1">
+                  <input type="submit" value='Run Code' style="margin-top: 52px; width:125px;" >
+                  <br>
+                 </div>
+                </form>
+              </div>
+              <br>
+              <br>
+              <br>
+                {%load static%}
+                {% block body %}
+                <input id="toggleVisibilityButton" type="button"  value="TestCases" style="width:125px; margin-left: auto; margin-right: 120px; align-content: right;"/>
+                <br>
+                <br>
+                <div class="but2">
+                    <input type="button" onClick="location.href='{% url 'result' %}'" value='Finish' style="width:125px;" />
+                </div>
+                <table  id="displaytable" style="margin-left:50px; margin-right: 100px; ">
+                <tr align="center">
+                <th>Input</th>
+                <th>ExpectedOutput</th>
+                <th>ObtainedOutput</th>
+                <th>Status</th>
+                </tr>
+                {% for uk,uv in result2.items %}
+                  {% for tk,tv in result1.items %}
+                  {% if tk == uk %}
+                      {% if tv == uv.strip %}
+                  <tr style="background-color:#90EE90;text-align: center;">
+                <td> {{ tk }} </td>
+                <td> {{ tv }} </td>
+                <td> {{ uv }} </td>
+                <td> Success </td>
+                {{ break }}
+                </tr>
+                {% else %}
+                <tr style="background-color:#ff6666;text-align: center;">
+                  <td>{{ tk }}</td>
+                  <td>{{ tv }}</td>
+                  <td>{{ uv }}</td>
+                  <td >Failed</td>
+               </tr>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+                {% for uk,uv in result4.items %}
+                {% for tk,tv in result3.items %}
+                {% if tk == uk %}
+                    {% if tv == uv.strip %}
+                <tr style="background-color:#90EE90;text-align: center;">
+
+              <td colspan="4"> Success </td>
+              {{ break }}
+              </tr>
+              {% else %}
+              <tr style="background-color:#ff6666;text-align: center;">
+
+                <td colspan="4">Failed</td>
+             </tr>
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+              {% endfor %}
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script type="text/javascript">
+  let count = 0;
+  window.addEventListener('focus', function(e){
+    tot = new Date().toLocaleTimeString();
+    var time= tot;
+      sessionStorage.setItem("time", time);
+     console.log("Left the site at " + tot);
+        document.title = " focus";
+    });
+    window.addEventListener('blur', function(e){
+        count++;
+        alert("you have switched the tab " + count + " times");
+        if (count > 3)
+             window.location="/result";
+  });
+let timeSecond = 5400;
+const timeH = document.querySelector("h2");
+
+displayTime(timeSecond);
+const countDown = setInterval(() => {
+  timeSecond--;
+  displayTime(timeSecond);
+  if (timeSecond == 0 || timeSecond < 1) {
+    endCount();
+    clearInterval(countDown);
+  }
+}, 1000);
+function displayTime(second) {
+  const min = Math.floor(second / 60);
+  const sec = Math.floor(second % 60);
+  timeH.innerHTML = `
+  ${min < 10 ? "0" : ""}${min}:${sec < 10 ? "0" : ""}${sec}
+  `;
+}
+function endCount() {
+timeH.innerHTML = "Time out!!!";
+}
+// *********************
+// This Code is for only the floating card in right bottom corner
+// **********************
+
+/*const touchButton = document.querySelector(".float-text");
+const card = document.querySelector(".float-card-info");
+const close = document.querySelector(".gg-close-r");
+
+touchButton.addEventListener("click", moveCard);
+close.addEventListener("click", moveCard);
+
+function moveCard() {
+  card.classList.toggle("active");
+}*/
+function Redirect()
+    {
+        window.location="/result";
+    }
+    setTimeout('Redirect()', 5400000);
+    document.getElementById("toggleVisibilityButton").addEventListener("click", function(button) {
+           if (document.getElementById("displaytable").style.display === "none")             document.getElementById("displaytable").style.display = "block";
+           else document.getElementById("displaytable").style.display = "none";
+        });
+  </script>
+</body>
+</html>
+{% endblock %}
